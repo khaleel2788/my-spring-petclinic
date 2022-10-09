@@ -16,7 +16,7 @@ pipeline {
         stage('Build the Code and sonarqube-analysis') {
             steps {
                 withSonarQubeEnv('SONAR_LATEST') {
-                    sh script: "mvn ${params.GOAL} sonar:sonar"
+                    sh script: "mvn package sonar:sonar"
                 }
             }
         }
